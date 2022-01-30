@@ -1,39 +1,5 @@
 private var nonogramSolved = false
 
-fun main() {
-
-    val rowConstraints = arrayOf(
-        intArrayOf(2,1),
-        intArrayOf(2,2),
-        intArrayOf(1,1,1),
-        intArrayOf(1),
-        intArrayOf(1,1)
-    )
-
-    val columnConstraints = arrayOf(
-        intArrayOf(3,1),
-        intArrayOf(2),
-        intArrayOf(3),
-        intArrayOf(1),
-        intArrayOf(3)
-    )
-
-    val board = arrayOf(
-        intArrayOf(1, 1, 1, 0, 0),
-        intArrayOf(1, 1, 0, 1, 1),
-        intArrayOf(1, 0, 0, 0, 0),
-        intArrayOf(0, 0, 0, 0, 0),
-        intArrayOf(1, 0, 0, 0, 0)
-    )
-
-
-    val solution = solveNonogram(rowConstraints, columnConstraints)
-
-    solution.forEach {
-        println(it.contentToString())
-    }
-}
-
 fun solveNonogram(rowConstraints: Array<IntArray>, columnConstraints: Array<IntArray>): Array<IntArray> {
     nonogramSolved = false
     val board = Array(rowConstraints.size) {IntArray(columnConstraints.size) {0} }

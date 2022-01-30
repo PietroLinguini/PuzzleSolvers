@@ -1,26 +1,6 @@
 const val GRID_SIZE = 9
 var solved = false
 
-fun main() {
-    val board: Array<IntArray> = arrayOf(
-        intArrayOf(0,0,9,0,0,0,0,1,5),
-        intArrayOf(5,0,0,4,0,9,7,0,0),
-        intArrayOf(4,7,3,5,6,1,9,0,0),
-        intArrayOf(0,0,0,7,4,0,0,9,6),
-        intArrayOf(0,0,0,0,0,0,0,8,0),
-        intArrayOf(0,0,4,8,3,0,1,5,0),
-        intArrayOf(1,3,5,9,0,0,0,0,2),
-        intArrayOf(0,0,6,2,5,7,0,3,0),
-        intArrayOf(7,2,0,0,1,0,0,0,9),
-    )
-
-//    board.sudokuSolve()
-    solveBoard(board)
-    board.forEach {
-        println(it.contentToString())
-    }
-}
-
 fun Array<IntArray>.sudokuSolve() {
     solved = false
     solve(this, 0, 0)
